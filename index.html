@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#08090c" />
+  <!-- Video CDN Preconnect for zero-lag mobile playback -->
+  <link rel="preconnect" href="https://commondatastorage.googleapis.com" crossorigin />
+  <link rel="dns-prefetch" href="https://commondatastorage.googleapis.com" />
+  <title>Main Stream Digital (MSD) — Creative Media & Digital Growth Agency</title>
+  <meta name="description" content="Main Stream Digital (MSD) is India's premier hybrid creative agency bridging prime-lens commercial video and luxury wedding films with high-velocity SMM, SEO, and performance marketing." />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Instrument Serif, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              950: '#08090C',
+              DEFAULT: '#0B0C10',
+              surface: '#101218',
+              elevated: '#161822'
+            },
+            champagne: {
+              300: '#D8C39E',
+              DEFAULT: '#C9A96E',
+              600: '#A3834C'
+            },
+            steel: {
+              300: '#8CAEC9',
+              DEFAULT: '#5B82A6',
+              700: '#3E5C79'
+            },
+            titanium: {
+              100: '#F4F5F7',
+              200: '#E1E4EA',
+              400: '#9BA1B0',
+              600: '#636B7C'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            serif: ['Instrument Serif', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="text-zinc-100 selection:bg-[#c9a96e] selection:text-black pb-24 md:pb-0">
+
+  <!-- Custom Cursor Elements (Desktop) -->
+  <div id="customCursor" class="custom-cursor"></div>
+  <div id="customCursorFollower" class="custom-cursor-follower"></div>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR (MOBILE-OPTIMIZED)
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl bg-[#08090c]/85 border-b border-white/[0.08]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-white text-black flex items-center justify-center font-sans font-extrabold text-xs sm:text-sm tracking-wider group-hover:bg-[#d8c39e] transition-colors">
+          MSD
+        </div>
+        <div class="flex flex-col">
+          <span class="font-sans font-bold text-sm sm:text-base tracking-wide text-white flex items-center gap-1.5 leading-none">
+            MAIN STREAM DIGITAL <span class="w-1.5 h-1.5 rounded-full bg-[#c9a96e]"></span>
+          </span>
+          <span class="font-mono text-[9px] sm:text-[10px] tracking-widest text-zinc-400 uppercase mt-0.5">Creative Agency • India</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-300">
+        <a href="#work" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <span>Work</span>
+          <span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-white/10 text-[#d8c39e]">09</span>
+        </a>
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#estimator" class="hover:text-white transition-colors">Scope Calculator</a>
+        <a href="#process" class="hover:text-white transition-colors">The 4D Engine</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        
+        <!-- Live Status Pill (Desktop) -->
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#c9a96e] animate-pulse"></span>
+          <span>Open for Q1/Q2 Projects</span>
+        </div>
+
+        <!-- Ambient Sound Engine Button -->
+        <button id="soundToggleBtn" type="button" title="Toggle Ambient Soundscape" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-zinc-300 hover:text-white hover:border-[#c9a96e]/40 transition-all cursor-pointer">
+          <span class="sound-bar h-2"></span>
+          <span class="sound-bar h-3.5"></span>
+          <span class="sound-bar h-1.5"></span>
+          <span class="sound-bar h-3"></span>
+          <span class="hidden sm:inline ml-1">Sound</span>
+        </button>
+
+        <!-- CTA Button (Desktop) -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl btn-gold-primary text-xs uppercase tracking-wider">
+          <span>Start a Project</span>
+          <span class="text-xs">→</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobileMenuToggle" type="button" class="md:hidden p-2 text-zinc-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-[#08090c]/98 backdrop-blur-2xl hidden flex flex-col justify-between p-6 sm:p-8 pt-24">
+    <button id="closeMobileMenu" class="absolute top-5 right-5 text-white text-2xl font-bold p-2" aria-label="Close Mobile Menu">✕</button>
+    <div class="flex flex-col gap-5 text-xl font-sans font-semibold">
+      <a href="#work" class="mobile-nav-link text-white hover:text-[#d8c39e] transition-colors">Portfolio & Work</a>
+      <a href="#services" class="mobile-nav-link text-white hover:text-[#d8c39e] transition-colors">Agency Services</a>
+      <a href="#estimator" class="mobile-nav-link text-white hover:text-[#d8c39e] transition-colors">Scope Calculator (INR)</a>
+      <a href="#process" class="mobile-nav-link text-white hover:text-[#d8c39e] transition-colors">The 4D Engine</a>
+      <a href="#faq" class="mobile-nav-link text-white hover:text-[#d8c39e] transition-colors">FAQ</a>
+      <a href="#contact" class="mobile-nav-link text-[#d8c39e] hover:text-white transition-colors">Contact / Book Consultation</a>
+    </div>
+
+    <!-- Mobile Drawer Quick Channels -->
+    <div class="pt-6 border-t border-white/10 flex flex-col gap-3 font-mono text-xs text-zinc-400">
+      <a href="https://wa.me/919820012345" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-3 rounded-xl btn-whatsapp text-center justify-center">
+        <span>💬 Instant WhatsApp Chat (+91 98200 12345)</span>
+      </a>
+      <p class="text-center mt-2">MUMBAI • DELHI NCR • BENGALURU • HYDERABAD</p>
+      <p class="text-center text-zinc-500">hello@mainstreamdigital.in</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION — HUMAN-PROPORTIONED CINEMATIC MANIFESTO
+         ========================================================================== -->
+    <section class="relative min-h-[85vh] sm:min-h-[90vh] pt-28 sm:pt-36 pb-16 flex flex-col justify-center overflow-hidden">
+      
+      <!-- Ambient Video Canvas Backdrop -->
+      <div class="absolute inset-0 z-0 overflow-hidden opacity-25">
+        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#08090c]/90 via-[#0b0c10]/85 to-[#0b0c10]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Category Pill Tag -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 sm:mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#c9a96e]"></span>
+          <span class="font-mono text-[10px] sm:text-xs text-zinc-300 uppercase tracking-widest">
+            Commercial Video Production × Digital Growth Agency
+          </span>
+        </div>
+
+        <!-- Human-Proportioned Headline -->
+        <h1 class="hero-headline max-w-4xl text-2xl sm:text-4xl md:text-5xl font-semibold leading-tight">
+          Cinematic films that captivate, digital engines that <span class="editorial-italic font-normal text-[#d8c39e]">convert.</span>
+        </h1>
+
+        <!-- Subheadline / Value Proposition -->
+        <p class="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-zinc-300 max-w-2xl leading-relaxed font-normal">
+          A hybrid media powerhouse in India. Blending prime-lens commercial productions and luxury destination wedding films with high-velocity social media management (SMM), technical SEO, and conversion science.
+        </p>
+
+        <!-- Action Triggers -->
+        <div class="mt-8 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-5">
+          <button id="openShowreelBtn" type="button" class="group px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl btn-gold-primary text-xs uppercase tracking-wider flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-[#08090c] text-[#c9a96e] flex items-center justify-center text-[10px] group-hover:scale-110 transition-transform">
+              ▶
+            </span>
+            <span>Watch 2026 Reel (2:45)</span>
+          </button>
+
+          <a href="https://wa.me/919820012345" target="_blank" rel="noopener noreferrer" class="px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl btn-whatsapp text-xs uppercase tracking-wider flex items-center gap-2">
+            <span>WhatsApp Us</span>
+            <span>↗</span>
+          </a>
+
+          <a href="#estimator" class="px-3 sm:px-4 py-3 text-xs font-mono text-zinc-400 hover:text-[#d8c39e] flex items-center gap-1.5 transition-colors">
+            <span>Calculate Project Scope →</span>
+          </a>
+        </div>
+
+        <!-- Restrained Quantitative Impact Strip (INR Localized) -->
+        <div class="mt-14 sm:mt-20 pt-8 sm:pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+          <div>
+            <span class="text-xl sm:text-3xl font-semibold tracking-tight text-white block">₹45 Cr+</span>
+            <span class="text-[11px] sm:text-xs font-mono text-zinc-400 mt-0.5 block">Client Revenue Influenced</span>
+          </div>
+          <div>
+            <span class="text-xl sm:text-3xl font-semibold tracking-tight text-white block">150M+</span>
+            <span class="text-[11px] sm:text-xs font-mono text-zinc-400 mt-0.5 block">Reels & Video Views</span>
+          </div>
+          <div>
+            <span class="text-xl sm:text-3xl font-semibold tracking-tight text-[#d8c39e] block">5.2x</span>
+            <span class="text-[11px] sm:text-xs font-mono text-zinc-400 mt-0.5 block">Average Paid Media ROAS</span>
+          </div>
+          <div>
+            <span class="text-xl sm:text-3xl font-semibold tracking-tight text-white block">99.4%</span>
+            <span class="text-[11px] sm:text-xs font-mono text-zinc-400 mt-0.5 block">Client Retention Rate</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BRAND LOGOS & RECOGNITION MARQUEE (INDIAN CLIENTS)
+         ========================================================================== -->
+    <section class="py-6 sm:py-8 border-y border-white/[0.08] bg-[#08090c] overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 mb-2.5 text-center">
+        <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-zinc-500">
+          Trusted by Premier Indian Brands, Luxury Weddings & High-Growth Startups
+        </span>
+      </div>
+      
+      <div class="relative w-full overflow-hidden">
+        <div class="animate-marquee flex items-center gap-10 sm:gap-16 text-zinc-400 font-sans font-medium text-xs sm:text-sm tracking-wider">
+          <span class="hover:text-white transition-colors">KAVYA COUTURE</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-[#d8c39e] transition-colors">ROYAL UDAIVILAS</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">RUPEEFLOW FINTECH</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">VELOCE EV MOBILITY</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-[#d8c39e] transition-colors">GOA BEACH WEDDINGS</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">VEDA BOTANICS</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">VAYA RESIDENCES</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">FITPULSE INDIA</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-[#d8c39e] transition-colors">WEDMEGOOD FEATURED</span>
+          <span class="text-zinc-600">•</span>
+          <!-- Duplicate for smooth loop -->
+          <span class="hover:text-white transition-colors">KAVYA COUTURE</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-[#d8c39e] transition-colors">ROYAL UDAIVILAS</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">RUPEEFLOW FINTECH</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">VELOCE EV MOBILITY</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-[#d8c39e] transition-colors">GOA BEACH WEDDINGS</span>
+          <span class="text-zinc-600">•</span>
+          <span class="hover:text-white transition-colors">VEDA BOTANICS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PORTFOLIO SECTION — SELECTED WORKS & COMMISSIONS
+         ========================================================================== -->
+    <section id="work" class="py-16 sm:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Row -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-white/10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-300 mb-2 sm:mb-3">
+              <span>● Selected Works & Film Commissions</span>
+            </div>
+            <h2 class="section-heading">
+              Selected Works & Commissions
+            </h2>
+            <p class="section-subheading mt-1.5 sm:mt-2 max-w-xl text-xs sm:text-sm">
+              Tap any card for 4K video preview, production specs, and verified business growth analytics.
+            </p>
+          </div>
+
+          <!-- Dynamic Counter -->
+          <div class="flex flex-col items-start md:items-end">
+            <span id="projectCountBadge" class="text-xs font-mono text-zinc-400">
+              Showing 9 of 9 Selected Commissions
+            </span>
+            <span class="text-[11px] font-mono text-[#d8c39e] mt-0.5">4K HDR Video Previews Active</span>
+          </div>
+        </div>
+
+        <!-- Filter Buttons (Horizontal Swipeable Strip on Mobile) -->
+        <div class="mt-6 flex items-center overflow-x-auto no-scrollbar gap-2 pb-2">
+          <button type="button" data-filter="all" class="filter-tab-btn whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-medium border bg-white text-black border-white transition-all shrink-0">
+            All Works
+          </button>
+          <button type="button" data-filter="commercials" class="filter-tab-btn whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-medium border bg-white/5 text-zinc-400 border-white/10 hover:text-white transition-all shrink-0">
+            Commercials & Brand Films
+          </button>
+          <button type="button" data-filter="weddings" class="filter-tab-btn whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-medium border bg-white/5 text-zinc-400 border-white/10 hover:text-white transition-all shrink-0">
+            Royal Wedding Films
+          </button>
+          <button type="button" data-filter="smm" class="filter-tab-btn whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-medium border bg-white/5 text-zinc-400 border-white/10 hover:text-white transition-all shrink-0">
+            SMM & Viral Content
+          </button>
+          <button type="button" data-filter="seo" class="filter-tab-btn whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-medium border bg-white/5 text-zinc-400 border-white/10 hover:text-white transition-all shrink-0">
+            SEO & Growth Engine
+          </button>
+        </div>
+
+        <!-- Portfolio Bento Grid (Populated dynamically via app.js) -->
+        <div id="portfolioContainer" class="mt-8 sm:mt-12 grid grid-cols-2 lg:grid-cols-3 grid-flow-row-dense gap-3 sm:gap-6 lg:gap-8">
+          <!-- Injected via app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES MATRIX — CREATIVE PRODUCTION & DIGITAL GROWTH
+         ========================================================================== -->
+    <section id="services" class="py-16 sm:py-24 bg-[#08090c] relative border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest bg-white/5 text-zinc-300 border border-white/10">
+            Dual Superpowers
+          </span>
+          <h2 class="section-heading mt-4">
+            Cinematic artistry meets algorithmic scale.
+          </h2>
+          <p class="section-subheading mt-2 sm:mt-3 text-xs sm:text-sm">
+            We eliminate the friction between production houses that cannot run marketing, and digital agencies that make uninspired content.
+          </p>
+        </div>
+
+        <!-- Dual Grid Columns -->
+        <div class="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          
+          <!-- Pillar 1: Creative Media & Commercial Production -->
+          <div class="p-6 sm:p-10 rounded-2xl matte-card pillar-card-cinema relative overflow-hidden group">
+            
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#c9a96e]/10 border border-[#c9a96e]/20 flex items-center justify-center text-[#d8c39e] font-bold text-sm sm:text-base">
+                🎬
+              </span>
+              <div>
+                <span class="text-xs font-mono uppercase tracking-widest text-[#d8c39e]">Pillar 01</span>
+                <h3 class="text-lg sm:text-2xl font-semibold tracking-tight text-white">Creative Media & Video</h3>
+              </div>
+            </div>
+
+            <p class="text-zinc-300 text-xs sm:text-sm mt-3 sm:mt-4 leading-relaxed font-normal">
+              High-end cinematic visuals shot on Netflix-approved cinema cameras (ARRI, RED, Sony Cinema Line) with prime lenses, bespoke lighting, and professional sound design.
+            </p>
+
+            <div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Commercial Video Production</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-zinc-400">TV • Web • OTT</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">High-impact scripted commercials, product reveals, and broadcast ads designed to stop the scroll.</p>
+              </div>
+
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-[#c9a96e]/30 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Luxury Destination Weddings</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-[#d8c39e]">Heirloom 4K</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">Royal Rajasthan palace celebrations, Goa sunset beach weddings, and heirloom documentaries with 35mm film emulation.</p>
+              </div>
+
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Brand Story Films</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-zinc-400">Founder Story</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">Emotion-driven narrative films that establish deep authority, investor confidence, and customer trust.</p>
+              </div>
+
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">High-Velocity Content Batching</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-zinc-400">Reels & Shorts</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">Agile studio batches generating 30–60 vertical video assets per month engineered for viral Indian reach.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
+              <span>Gear: ARRI Alexa • Sony FX6 • DaVinci</span>
+              <a href="#contact" class="text-[#d8c39e] hover:underline">Commission Film →</a>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Digital Marketing & Algorithmic Growth -->
+          <div class="p-6 sm:p-10 rounded-2xl matte-card pillar-card-growth relative overflow-hidden group">
+
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#5b82a6]/10 border border-[#5b82a6]/20 flex items-center justify-center text-[#8caec9] font-bold text-sm sm:text-base">
+                📈
+              </span>
+              <div>
+                <span class="text-xs font-mono uppercase tracking-widest text-[#8caec9]">Pillar 02</span>
+                <h3 class="text-lg sm:text-2xl font-semibold tracking-tight text-white">Digital Marketing & Growth</h3>
+              </div>
+            </div>
+
+            <p class="text-zinc-300 text-xs sm:text-sm mt-3 sm:mt-4 leading-relaxed font-normal">
+              Data-backed distribution frameworks that put your cinematic content in front of high-value buyers, dominating organic search and maximizing return on ad spend.
+            </p>
+
+            <div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-[#5b82a6]/30 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Social Media Management (SMM)</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-[#8caec9]">Full-Funnel</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">End-to-end community building, copywriting, daily publishing cadence, and algorithmic trend hijacking.</p>
+              </div>
+
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-[#5b82a6]/30 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Search Engine Optimization (SEO)</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-[#8caec9]">Pan-India & Local</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">Topical authority clustering, local map pack dominance, core vitals optimization, and video schema markup.</p>
+              </div>
+
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Paid Acquisition & ROAS Scaling</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-zinc-400">Meta • Google Ads</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">High-converting ad funnel architecture, iterative A/B creative testing, and multi-touch attribution.</p>
+              </div>
+
+              <div class="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 transition-all">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Creative Strategy & CRO</h4>
+                  <span class="text-[10px] sm:text-xs font-mono text-zinc-400">Conversion Science</span>
+                </div>
+                <p class="text-[11px] sm:text-xs text-zinc-400 mt-1">Landing page audits, high-intent user journey mapping, and conversion rate optimization.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
+              <span>Stack: Ahrefs • Meta Business Manager • GA4</span>
+              <a href="#contact" class="text-[#8caec9] hover:underline">Deploy Growth Engine →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE PROJECT SCOPE & COST ESTIMATOR (RUPEES)
+         ========================================================================== -->
+    <section id="estimator" class="py-16 sm:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="p-6 sm:p-12 lg:p-14 rounded-3xl matte-card border border-white/10 shadow-2xl relative overflow-hidden">
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
+            
+            <!-- Left Configurator -->
+            <div class="lg:col-span-7">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-300 mb-3 sm:mb-4">
+                <span>Scope & Budget Planner (INR)</span>
+              </div>
+              <h2 class="section-heading">
+                Project Scope & Investment Calculator
+              </h2>
+              <p class="section-subheading mt-2 text-xs sm:text-sm">
+                Select required production deliverables and growth services below to calculate estimated investment in Indian Rupees.
+              </p>
+
+              <!-- Step 1: Services Checkboxes -->
+              <div class="mt-6 sm:mt-8">
+                <label class="block text-xs font-mono uppercase text-zinc-400 tracking-wider mb-3">
+                  01. Select Deliverables & Services
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  
+                  <label class="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-3 cursor-pointer hover:border-white/30 transition-all">
+                    <input type="checkbox" class="estimator-service-check accent-[#c9a96e] w-4 h-4" checked data-name="Commercial Video Production" data-min="125000" data-max="250000" />
+                    <div>
+                      <span class="text-xs sm:text-sm font-medium text-white block">Commercial Video</span>
+                      <span class="text-[10px] sm:text-[11px] font-mono text-zinc-400">+₹1,25,000 – ₹2,50,000</span>
+                    </div>
+                  </label>
+
+                  <label class="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-3 cursor-pointer hover:border-white/30 transition-all">
+                    <input type="checkbox" class="estimator-service-check accent-[#c9a96e] w-4 h-4" data-name="Brand Narrative Film" data-min="150000" data-max="350000" />
+                    <div>
+                      <span class="text-xs sm:text-sm font-medium text-white block">Brand Narrative Film</span>
+                      <span class="text-[10px] sm:text-[11px] font-mono text-zinc-400">+₹1,50,000 – ₹3,50,000</span>
+                    </div>
+                  </label>
+
+                  <label class="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-3 cursor-pointer hover:border-[#c9a96e]/40 transition-all">
+                    <input type="checkbox" class="estimator-service-check accent-[#c9a96e] w-4 h-4" data-name="Luxury Wedding Film" data-min="175000" data-max="450000" />
+                    <div>
+                      <span class="text-xs sm:text-sm font-medium text-white block">Luxury Wedding Film</span>
+                      <span class="text-[10px] sm:text-[11px] font-mono text-[#d8c39e]">+₹1,75,000 – ₹4,50,000</span>
+                    </div>
+                  </label>
+
+                  <label class="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-3 cursor-pointer hover:border-white/30 transition-all">
+                    <input type="checkbox" class="estimator-service-check accent-[#c9a96e] w-4 h-4" checked data-name="Social Media Management (SMM)" data-min="45000" data-max="95000" data-retainer="true" />
+                    <div>
+                      <span class="text-xs sm:text-sm font-medium text-white block">SMM Management</span>
+                      <span class="text-[10px] sm:text-[11px] font-mono text-zinc-400">+₹45,000 – ₹95,000/mo</span>
+                    </div>
+                  </label>
+
+                  <label class="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-3 cursor-pointer hover:border-white/30 transition-all">
+                    <input type="checkbox" class="estimator-service-check accent-[#c9a96e] w-4 h-4" data-name="Technical SEO & Authority" data-min="40000" data-max="85000" data-retainer="true" />
+                    <div>
+                      <span class="text-xs sm:text-sm font-medium text-white block">SEO & Authority</span>
+                      <span class="text-[10px] sm:text-[11px] font-mono text-zinc-400">+₹40,000 – ₹85,000/mo</span>
+                    </div>
+                  </label>
+
+                  <label class="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-3 cursor-pointer hover:border-white/30 transition-all">
+                    <input type="checkbox" class="estimator-service-check accent-[#c9a96e] w-4 h-4" data-name="Viral Content & UGC Batching" data-min="55000" data-max="110000" data-retainer="true" />
+                    <div>
+                      <span class="text-xs sm:text-sm font-medium text-white block">Viral UGC Batching</span>
+                      <span class="text-[10px] sm:text-[11px] font-mono text-zinc-400">+₹55,000 – ₹1,10,000/mo</span>
+                    </div>
+                  </label>
+
+                </div>
+              </div>
+
+              <!-- Step 2: Scale Multiplier -->
+              <div class="mt-6 sm:mt-8">
+                <label class="block text-xs font-mono uppercase text-zinc-400 tracking-wider mb-2.5">
+                  02. Production Scale / Brand Tier
+                </label>
+                <div class="grid grid-cols-3 gap-2 sm:gap-3">
+                  <label class="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center cursor-pointer hover:border-white/30 transition-all">
+                    <input type="radio" name="estimatorTier" value="1.0" class="sr-only" checked />
+                    <span class="text-xs sm:text-sm font-medium text-white block">Boutique</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-zinc-400">Emerging D2C</span>
+                  </label>
+                  <label class="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center cursor-pointer hover:border-white/30 transition-all">
+                    <input type="radio" name="estimatorTier" value="1.4" class="sr-only" />
+                    <span class="text-xs sm:text-sm font-medium text-white block">Growth</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-zinc-400">Multi-City</span>
+                  </label>
+                  <label class="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center cursor-pointer hover:border-white/30 transition-all">
+                    <input type="radio" name="estimatorTier" value="2.0" class="sr-only" />
+                    <span class="text-xs sm:text-sm font-medium text-white block">Luxury / Corp</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-[#d8c39e]">Pan-India</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 3: Timeline -->
+              <div class="mt-6 sm:mt-8">
+                <label class="block text-xs font-mono uppercase text-zinc-400 tracking-wider mb-2.5">
+                  03. Desired Turnaround
+                </label>
+                <div class="grid grid-cols-3 gap-2 sm:gap-3">
+                  <label class="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center cursor-pointer hover:border-white/30 transition-all">
+                    <input type="radio" name="estimatorTimeline" value="1.2" class="sr-only" />
+                    <span class="text-xs sm:text-sm font-medium text-white block">Priority Rush</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-zinc-300">2 Weeks (+20%)</span>
+                  </label>
+                  <label class="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center cursor-pointer hover:border-white/30 transition-all">
+                    <input type="radio" name="estimatorTimeline" value="1.0" class="sr-only" checked />
+                    <span class="text-xs sm:text-sm font-medium text-white block">Standard</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-zinc-400">3–5 Weeks</span>
+                  </label>
+                  <label class="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center cursor-pointer hover:border-white/30 transition-all">
+                    <input type="radio" name="estimatorTimeline" value="0.9" class="sr-only" />
+                    <span class="text-xs sm:text-sm font-medium text-white block">Retainer</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-[#d8c39e]">Ongoing (-10%)</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Estimate Summary Card -->
+            <div class="lg:col-span-5 flex flex-col justify-between p-5 sm:p-8 rounded-2xl bg-[#08090c] border border-white/10">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-widest text-zinc-400 block">Estimated Investment</span>
+                <div id="estimatorPriceRange" class="text-xl sm:text-3xl font-semibold tracking-tight text-white mt-1.5 sm:mt-2">
+                  Calculating...
+                </div>
+                
+                <div class="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/10">
+                  <span class="text-xs font-mono uppercase text-zinc-400 tracking-wider block mb-2 sm:mb-3">Included Scope Deliverables:</span>
+                  <ul id="estimatorSummaryList" class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm font-medium">
+                    <!-- Injected via app.js -->
+                  </ul>
+                </div>
+
+                <div class="mt-5 sm:mt-6 p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/10 text-[11px] sm:text-xs text-zinc-300">
+                  <p class="font-semibold text-white">✓ Indian Commercial Standard</p>
+                  <p class="mt-1">All commercial production includes full pan-India broadcast usage rights, ProRes master delivery, and GST-compliant invoicing.</p>
+                </div>
+              </div>
+
+              <div class="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-white/10 flex flex-col gap-2.5">
+                <a id="estimatorWhatsAppBtn" href="https://wa.me/919820012345" target="_blank" rel="noopener noreferrer" class="w-full py-3 sm:py-3.5 rounded-xl btn-whatsapp text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                  <span>Instant WhatsApp Quote</span>
+                  <span>↗</span>
+                </a>
+                <button id="sendEstimateToFormBtn" type="button" class="w-full py-2.5 sm:py-3 rounded-xl btn-matte-secondary text-xs uppercase tracking-wider cursor-pointer">
+                  Sync to Project Brief ↓
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         THE 4D PRODUCTION & GROWTH ENGINE (PROCESS)
+         ========================================================================== -->
+    <section id="process" class="py-16 sm:py-24 bg-[#08090c] relative border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <span class="px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest bg-white/5 text-zinc-400 border border-white/10">
+            Proprietary Framework
+          </span>
+          <h2 class="section-heading mt-4">
+            The 4D Content-to-Conversion Engine
+          </h2>
+          <p class="section-subheading mt-2 sm:mt-3 text-xs sm:text-sm">
+            How MSD takes projects from concept to commercial dominance across India.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          
+          <div class="p-5 sm:p-6 rounded-2xl matte-card">
+            <span class="text-2xl sm:text-3xl font-mono text-zinc-600 block mb-2 sm:mb-3">01</span>
+            <h3 class="text-base sm:text-lg font-semibold tracking-tight text-white">Discover & Script</h3>
+            <p class="text-xs font-mono text-[#d8c39e] mt-0.5 uppercase">Audience & Storyboard</p>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-3 sm:mt-4 leading-relaxed font-normal">
+              We analyze consumer psychology, keyword opportunity voids across Indian metros, and script video hooks designed to capture attention within the first 3 seconds.
+            </p>
+          </div>
+
+          <div class="p-5 sm:p-6 rounded-2xl matte-card">
+            <span class="text-2xl sm:text-3xl font-mono text-zinc-600 block mb-2 sm:mb-3">02</span>
+            <h3 class="text-base sm:text-lg font-semibold tracking-tight text-white">Direct & Shoot</h3>
+            <p class="text-xs font-mono text-[#d8c39e] mt-0.5 uppercase">Cinema-Grade Execution</p>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-3 sm:mt-4 leading-relaxed font-normal">
+              Deployment of prime camera packages, precision audio capture, and master color grading. For destination weddings, discreet emotional documentary storytelling.
+            </p>
+          </div>
+
+          <div class="p-5 sm:p-6 rounded-2xl matte-card">
+            <span class="text-2xl sm:text-3xl font-mono text-zinc-600 block mb-2 sm:mb-3">03</span>
+            <h3 class="text-base sm:text-lg font-semibold tracking-tight text-white">Distribute & Scale</h3>
+            <p class="text-xs font-mono text-[#8caec9] mt-0.5 uppercase">Algorithmic Placement</p>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-3 sm:mt-4 leading-relaxed font-normal">
+              We cut master footage into 30+ vertical variations, deploy multi-channel paid social campaigns (Instagram, Meta, YouTube), and index technical SEO schema clusters.
+            </p>
+          </div>
+
+          <div class="p-5 sm:p-6 rounded-2xl matte-card">
+            <span class="text-2xl sm:text-3xl font-mono text-zinc-600 block mb-2 sm:mb-3">04</span>
+            <h3 class="text-base sm:text-lg font-semibold tracking-tight text-white">Dominate & Retain</h3>
+            <p class="text-xs font-mono text-[#8caec9] mt-0.5 uppercase">Optimization & Retention</p>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-3 sm:mt-4 leading-relaxed font-normal">
+              Continuous attribution analysis, CTR optimization, creative fatigue monitoring, and monthly video batching to compound revenue month-over-month.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS & SOCIAL PROOF
+         ========================================================================== -->
+    <section class="py-16 sm:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-white/10">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#d8c39e] block">Verified Client Feedback</span>
+            <h2 class="section-heading mt-1.5 sm:mt-2">
+              Client Endorsements & Proof
+            </h2>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex items-center gap-2 sm:gap-3">
+            <button id="testPrevBtn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/30 transition-all" aria-label="Previous Testimonial">←</button>
+            <button id="testNextBtn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/30 transition-all" aria-label="Next Testimonial">→</button>
+          </div>
+        </div>
+
+        <div class="mt-8 sm:mt-12 relative min-h-[200px]">
+          
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="p-6 sm:p-12 rounded-2xl matte-card max-w-4xl">
+              <span class="text-[#c9a96e] text-xs font-mono tracking-widest block">★★★★★</span>
+              <p class="text-lg sm:text-2xl font-normal text-zinc-200 mt-3 sm:mt-4 leading-relaxed editorial-italic">
+                "MSD delivered on two fronts where typical agencies fail: authentic royal cinema that actually generated ₹4.2 Crore in direct festive revenue across Mumbai and Delhi."
+              </p>
+              <div class="mt-5 sm:mt-6 flex items-center gap-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-black font-bold flex items-center justify-center text-xs sm:text-sm font-sans">KS</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Kavya Singhania</h4>
+                  <span class="text-[11px] sm:text-xs font-mono text-zinc-400">Founder & Creative Director, Kavya Couture</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide hidden">
+            <div class="p-6 sm:p-12 rounded-2xl matte-card max-w-4xl">
+              <span class="text-[#c9a96e] text-xs font-mono tracking-widest block">★★★★★</span>
+              <p class="text-lg sm:text-2xl font-normal text-zinc-200 mt-3 sm:mt-4 leading-relaxed editorial-italic">
+                "Watching our wedding film made our entire family cry happy tears. It feels like a Sanjay Leela Bhansali film made just for our Udaipur celebration. Pure magic."
+              </p>
+              <div class="mt-5 sm:mt-6 flex items-center gap-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1c1f2b] text-[#d8c39e] font-bold flex items-center justify-center text-xs sm:text-sm font-sans border border-white/10">AS</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Ananya Singhania</h4>
+                  <span class="text-[11px] sm:text-xs font-mono text-zinc-400">Private Royal Wedding, Udaipur</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide hidden">
+            <div class="p-6 sm:p-12 rounded-2xl matte-card max-w-4xl">
+              <span class="text-[#c9a96e] text-xs font-mono tracking-widest block">★★★★★</span>
+              <p class="text-lg sm:text-2xl font-normal text-zinc-200 mt-3 sm:mt-4 leading-relaxed editorial-italic">
+                "MSD gave us the creative edge and search engine dominance that ranked us #1 across India and directly accelerated our Series A fundraising round in Bengaluru."
+              </p>
+              <div class="mt-5 sm:mt-6 flex items-center gap-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1c1f2b] text-[#8caec9] font-bold flex items-center justify-center text-xs sm:text-sm font-sans border border-white/10">VR</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-semibold text-white">Vikramaditya Rao</h4>
+                  <span class="text-[11px] sm:text-xs font-mono text-zinc-400">Co-Founder & CEO, RupeeFlow</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="testDots" class="mt-6 sm:mt-8 flex items-center gap-2"></div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQ ACCORDION SECTION
+         ========================================================================== -->
+    <section id="faq" class="py-16 sm:py-24 bg-[#08090c] relative border-t border-white/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center mb-10 sm:mb-16">
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Clarity & Expectations</span>
+          <h2 class="section-heading mt-2">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3.5 sm:space-y-4">
+          
+          <div class="rounded-xl matte-card overflow-hidden">
+            <button type="button" class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors">
+              <span class="text-xs sm:text-sm font-semibold text-white">Do you handle both film production AND digital ad/SEO distribution in India?</span>
+              <span class="faq-icon text-base sm:text-lg text-[#d8c39e] transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-zinc-300 border-t border-white/[0.06] font-normal leading-relaxed">
+              Yes, absolutely. That is our primary competitive advantage. We do not simply hand over a Google Drive folder of raw video files. We format, cut, test, and distribute the media through targeted Meta & Instagram Ads, SMM, and Google SEO to guarantee commercial ROI.
+            </div>
+          </div>
+
+          <div class="rounded-xl matte-card overflow-hidden">
+            <button type="button" class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors">
+              <span class="text-xs sm:text-sm font-semibold text-white">How do wedding films by MSD differ from traditional videographers?</span>
+              <span class="faq-icon text-base sm:text-lg text-[#d8c39e] transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-zinc-300 border-t border-white/[0.06] font-normal leading-relaxed">
+              Traditional videography is usually a chronological camcorder montage. We treat destination weddings in Udaipur, Jaipur, and Goa like 35mm cinema. We record 32-bit float audio vows, shoot on prime cinema glass, arrange bespoke Indian classical music scores, and color grade every frame to match vintage film stocks.
+            </div>
+          </div>
+
+          <div class="rounded-xl matte-card overflow-hidden">
+            <button type="button" class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors">
+              <span class="text-xs sm:text-sm font-semibold text-white">What is the typical turnaround time for commercial videos vs. SMM retainers?</span>
+              <span class="faq-icon text-base sm:text-lg text-[#d8c39e] transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-zinc-300 border-t border-white/[0.06] font-normal leading-relaxed">
+              Commercial video production and brand films typically require 3 to 5 weeks from initial script storyboard to final ProRes master. Priority 2-week turnarounds are available upon request. For SMM and Reels retainers, we work in monthly agile sprints with fresh batches dropped weekly.
+            </div>
+          </div>
+
+          <div class="rounded-xl matte-card overflow-hidden">
+            <button type="button" class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors">
+              <span class="text-xs sm:text-sm font-semibold text-white">Do you travel across India and internationally for commercial shoots and weddings?</span>
+              <span class="faq-icon text-base sm:text-lg text-[#d8c39e] transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-zinc-300 border-t border-white/[0.06] font-normal leading-relaxed">
+              Yes. Our cinema crews shoot pan-India—regularly in Mumbai, Delhi NCR, Rajasthan, Goa, Bengaluru, Kerala, and Hyderabad—as well as international destination shoots in Dubai, Thailand, and Europe.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONVERSION HUB / CONTACT TERMINAL (INDIAN CONTACT & WHATSAPP)
+         ========================================================================== -->
+    <section id="contact" class="py-16 sm:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12">
+          
+          <!-- Left Info & Quick Actions -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-300 mb-3 sm:mb-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#c9a96e] animate-pulse"></span>
+                <span>Response Guarantee: Under 2 Hours</span>
+              </div>
+              <h2 class="section-heading leading-tight">
+                Let's build something <span class="editorial-italic font-normal text-[#d8c39e]">enduring.</span>
+              </h2>
+              <p class="text-zinc-300 text-xs sm:text-sm mt-3 sm:mt-4 leading-relaxed font-normal">
+                Whether you need a commercial broadcast campaign, a royal destination wedding film, or a high-velocity digital marketing engine, Team MSD is ready.
+              </p>
+
+              <!-- Direct Indian Contact Channels -->
+              <div class="mt-6 sm:mt-8 space-y-3 font-mono text-xs sm:text-sm">
+                <a href="https://wa.me/919820012345" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.04] border border-[#25d366]/30 text-[#25d366] hover:bg-[#25d366]/10 transition-colors">
+                  <span class="text-base">💬</span>
+                  <span class="font-sans font-semibold">WhatsApp Executive Concierge: +91 98200 12345 →</span>
+                </a>
+                <div class="flex items-center gap-3 text-zinc-300 p-2">
+                  <span class="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#d8c39e]">☎</span>
+                  <span>+91 98200 12345 / +91 (022) 6945 9200</span>
+                </div>
+                <div class="flex items-center gap-3 text-zinc-300 p-2">
+                  <span class="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#d8c39e]">✉</span>
+                  <span>hello@mainstreamdigital.in</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Indian Studio Hubs -->
+            <div class="mt-8 sm:mt-12 p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+              <span class="text-xs font-mono uppercase text-zinc-400 block">Indian Studio Hubs</span>
+              <div class="mt-2.5 grid grid-cols-2 gap-3 text-xs font-mono text-zinc-300">
+                <div>
+                  <span class="text-white font-semibold block">MUMBAI</span>
+                  <span class="text-zinc-500">Bandra West / BKC</span>
+                </div>
+                <div>
+                  <span class="text-white font-semibold block">DELHI NCR</span>
+                  <span class="text-zinc-500">Cyber City, Gurugram</span>
+                </div>
+                <div>
+                  <span class="text-white font-semibold block">BENGALURU</span>
+                  <span class="text-zinc-500">Indiranagar</span>
+                </div>
+                <div>
+                  <span class="text-white font-semibold block">HYDERABAD</span>
+                  <span class="text-zinc-500">Jubilee Hills</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Interactive Project Brief Terminal -->
+          <div class="lg:col-span-7">
+            <div class="p-6 sm:p-10 rounded-3xl matte-card border border-white/10 shadow-2xl relative">
+              
+              <h3 class="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">
+                Project Intake & Discovery Brief
+              </h3>
+
+              <form id="projectInquiryForm" class="space-y-4 sm:space-y-5">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div>
+                    <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="Kabir Mehta" class="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#08090c] border border-white/10 text-white placeholder-zinc-600 focus:outline-none transition-colors text-xs sm:text-sm" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">Brand / Couple Name *</label>
+                    <input type="text" required placeholder="Brand or Event Name" class="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#08090c] border border-white/10 text-white placeholder-zinc-600 focus:outline-none transition-colors text-xs sm:text-sm" />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div>
+                    <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">Work Email *</label>
+                    <input type="email" required placeholder="kabir@brand.in" class="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#08090c] border border-white/10 text-white placeholder-zinc-600 focus:outline-none transition-colors text-xs sm:text-sm" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">WhatsApp / Phone *</label>
+                    <input type="tel" required placeholder="+91 98200 00000" class="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#08090c] border border-white/10 text-white placeholder-zinc-600 focus:outline-none transition-colors text-xs sm:text-sm" />
+                  </div>
+                </div>
+
+                <!-- Budget Tier Selector (INR) -->
+                <div>
+                  <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">Estimated Investment Range (INR)</label>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <label class="p-2 sm:p-2.5 rounded-lg bg-[#08090c] border border-white/10 text-center cursor-pointer hover:border-[#c9a96e] transition-colors">
+                      <input type="radio" name="projectBudget" value="under-1L" class="sr-only" checked />
+                      <span class="text-xs font-medium text-white block">&lt; ₹1 Lakh</span>
+                    </label>
+                    <label class="p-2 sm:p-2.5 rounded-lg bg-[#08090c] border border-white/10 text-center cursor-pointer hover:border-[#c9a96e] transition-colors">
+                      <input type="radio" name="projectBudget" value="1L-3L" class="sr-only" />
+                      <span class="text-xs font-medium text-white block">₹1L – ₹3L</span>
+                    </label>
+                    <label class="p-2 sm:p-2.5 rounded-lg bg-[#08090c] border border-white/10 text-center cursor-pointer hover:border-[#c9a96e] transition-colors">
+                      <input type="radio" name="projectBudget" value="3L-8L" class="sr-only" />
+                      <span class="text-xs font-medium text-white block">₹3L – ₹8L</span>
+                    </label>
+                    <label class="p-2 sm:p-2.5 rounded-lg bg-[#08090c] border border-white/10 text-center cursor-pointer hover:border-[#c9a96e] transition-colors">
+                      <input type="radio" name="projectBudget" value="8L+" class="sr-only" />
+                      <span class="text-xs font-medium text-[#d8c39e] block">₹8L+ / Retainer</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Project Notes / Requirements -->
+                <div>
+                  <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">Project Details & Vision</label>
+                  <textarea id="projectNotes" rows="3" placeholder="Tell us about your brand goals, target timeline, or wedding vision..." class="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#08090c] border border-white/10 text-white placeholder-zinc-600 focus:outline-none transition-colors text-xs sm:text-sm"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-3 sm:py-3.5 rounded-xl btn-gold-primary text-xs uppercase tracking-wider cursor-pointer">
+                  Send Project Brief →
+                </button>
+
+                <p class="text-center text-[10px] sm:text-[11px] font-mono text-zinc-500">
+                  NDA Protected • Team MSD responds in under 2 hours.
+                </p>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FLOATING MOBILE GLASS DOCK (THE COOL FACTOR)
+       ========================================================================== -->
+  <div id="mobileGlassDock" data-alias="mobileQuickDock" class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40 mobile-glass-dock rounded-full px-5 py-2.5 flex items-center gap-5 transition-transform duration-300">
+    <button type="button" onclick="document.getElementById('openShowreelBtn').click()" class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center text-zinc-300 hover:text-white text-[10px] font-mono touch-manipulation" aria-label="Open 2026 Showreel">
+      <span class="text-base">🎬</span>
+      <span class="mt-0.5">Reel</span>
+    </button>
+    <a href="#work" class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center text-zinc-300 hover:text-white text-[10px] font-mono touch-manipulation" aria-label="Navigate to Portfolio">
+      <span class="text-base">📁</span>
+      <span class="mt-0.5">Work</span>
+    </a>
+    <a href="#estimator" class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center text-zinc-300 hover:text-white text-[10px] font-mono touch-manipulation" aria-label="Navigate to Scope Estimator">
+      <span class="text-base">⚡</span>
+      <span class="mt-0.5">Scope</span>
+    </a>
+    <a href="https://wa.me/919820012345" target="_blank" rel="noopener noreferrer" class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center text-[#25d366] text-[10px] font-mono touch-manipulation" aria-label="Chat with MSD on WhatsApp">
+      <span class="text-base">💬</span>
+      <span class="mt-0.5 font-bold">Chat</span>
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="py-12 bg-[#08090c] border-t border-white/10 text-zinc-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-sans font-bold text-xs tracking-wider">
+            MSD
+          </div>
+          <div>
+            <span class="font-sans font-semibold text-sm sm:text-base text-white block">MAIN STREAM DIGITAL (MSD)</span>
+            <span class="font-mono text-xs text-zinc-500">Creative Media & Digital Growth Agency • India</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs font-mono">
+          <a href="#work" class="hover:text-white transition-colors">Portfolio</a>
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#estimator" class="hover:text-white transition-colors">Estimator</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+          <a href="https://wa.me/919820012345" target="_blank" class="text-[#25d366] hover:underline">WhatsApp (+91 98200 12345)</a>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500">
+        <p>© 2026 Main Stream Digital (MSD). All rights reserved.</p>
+        <p>Mumbai • Delhi NCR • Bengaluru • Hyderabad</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 1: FULLSCREEN 2026 SHOWREEL
+       ========================================================================== -->
+  <div id="showreelModal" class="modal-overlay fixed inset-0 z-[9999] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-8">
+    <div class="modal-content-box relative w-full max-w-5xl rounded-2xl overflow-hidden bg-black border border-white/20 shadow-2xl">
+      <div class="p-3.5 sm:p-4 bg-[#08090c] flex items-center justify-between border-b border-white/10">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#c9a96e] animate-pulse"></span>
+          <span class="text-xs font-mono uppercase tracking-widest text-white">Main Stream Digital (MSD) — Showreel</span>
+        </div>
+        <button data-close-modal class="text-zinc-400 hover:text-white text-base font-bold p-1 px-3" aria-label="Close Showreel">✕</button>
+      </div>
+      <div class="relative aspect-video w-full bg-black">
+        <video id="showreelModalVideo" controls playsinline preload="none" class="w-full h-full object-cover"></video>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: DEEP-DIVE CASE STUDY MODAL (WITH MOBILE BOTTOM SHEET)
+       ========================================================================== -->
+  <div id="caseStudyModal" class="modal-overlay fixed inset-0 z-[9999] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-0 sm:p-6 overflow-y-auto">
+    <div class="modal-content-box relative w-full max-w-4xl my-auto rounded-t-3xl sm:rounded-3xl overflow-hidden bg-[#0b0c10] border border-white/20 shadow-2xl max-h-[90vh] flex flex-col">
+      
+      <!-- Mobile Drag Handle with 44px Touch Target -->
+      <div id="modalDragHandle" class="sm:hidden w-full flex items-center justify-center py-3 min-h-[44px] cursor-grab active:cursor-grabbing touch-none select-none" aria-label="Drag down to close">
+        <div class="w-12 h-1.5 rounded-full bg-white/30"></div>
+      </div>
+
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-6 bg-[#101218] border-b border-white/10 flex items-center justify-between shrink-0">
+        <div>
+          <span id="modalCategory" class="px-2.5 py-0.5 rounded text-[10px] sm:text-[11px] font-mono uppercase badge-gold">
+            Brand Film
+          </span>
+          <h3 id="modalTitle" class="text-base sm:text-xl font-semibold text-white mt-1">
+            Project Title
+          </h3>
+          <span id="modalClient" class="text-[11px] sm:text-xs font-mono text-zinc-400">Client • 2026</span>
+        </div>
+        <button data-close-modal class="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-base shrink-0 transition-colors" aria-label="Close Case Study">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="overflow-y-auto p-4 sm:p-8 space-y-6 sm:space-y-8 flex-1 modal-body-scroll overscroll-contain">
+        
+        <!-- Video Player -->
+        <div class="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-white/10 flex items-center justify-center">
+          <video id="modalVideo" controls playsinline webkit-playsinline class="w-full h-full object-contain bg-black"></video>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div>
+          <span class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-400 block mb-2 sm:mb-3">At-A-Glance Quantitative Impact</span>
+          <div id="modalMetricsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
+            <!-- Injected via app.js -->
+          </div>
+        </div>
+
+        <!-- Challenge & Solution Breakdown -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/10">
+          <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+            <span class="text-xs font-mono uppercase text-[#d8c39e] block mb-1.5">01. The Challenge & Brief</span>
+            <p id="modalChallenge" class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal"></p>
+          </div>
+          <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+            <span class="text-xs font-mono uppercase text-[#d8c39e] block mb-1.5">02. Creative Cinema Production</span>
+            <p id="modalCreative" class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal"></p>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+          <span class="text-xs font-mono uppercase text-[#8caec9] block mb-1.5">03. Digital Marketing & Distribution Funnel</span>
+          <p id="modalGrowth" class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal"></p>
+        </div>
+
+        <!-- Quote Block -->
+        <div class="p-4 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 text-zinc-200 text-xs sm:text-sm">
+          <p id="modalQuote" class="editorial-italic text-base sm:text-lg text-zinc-200"></p>
+          <span id="modalQuoteAuthor" class="text-[11px] sm:text-xs font-mono not-italic text-[#d8c39e] block mt-2.5 font-semibold"></span>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer with Safe Area Clearance -->
+      <div class="modal-sheet-footer p-4 sm:p-5 bg-[#101218] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+        <span class="text-xs font-mono text-zinc-400 text-center sm:text-left">Want similar results for your brand or wedding?</span>
+        <div class="flex items-center gap-2.5 w-full sm:w-auto">
+          <a id="modalWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl btn-whatsapp text-xs uppercase tracking-wider text-center flex items-center justify-center gap-1.5">
+            <span>WhatsApp Us</span>
+            <span>↗</span>
+          </a>
+          <button id="modalSimilarProjectBtn" type="button" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl btn-gold-primary text-xs uppercase tracking-wider cursor-pointer text-center">
+            Start Brief →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
