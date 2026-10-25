@@ -569,7 +569,7 @@ function initMobileAudioUnlock() {
 }
 
 // --- 3. DOM READY INITIALIZATION ---
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   initMobileAudioUnlock();
   initCustomCursor();
   renderPortfolioGrid('all');
@@ -583,7 +583,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
   initPortfolioVideoSystem();
   initMobileQuickDock();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 // --- 4. CUSTOM MAGNETIC CURSOR (DESKTOP) ---
 function initCustomCursor() {
