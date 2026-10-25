@@ -1296,6 +1296,28 @@ function initVideoHoverPlay() {
 // ==========================================================================
 // 6. CASE STUDY MODAL & MOBILE BOTTOM SHEET
 // ==========================================================================
+
+function switchVideoQuality(videoEl, newUrl) {
+  if (!videoEl || !newUrl) return;
+  const t = videoEl.currentTime || 0;
+  const wasPlaying = !videoEl.paused;
+  videoEl.src = newUrl;
+  const onMeta = () => {
+    videoEl.removeEventListener('loadedmetadata', onMeta);
+    if (t > 0) {
+      try { videoEl.currentTime = t; } catch (e) {}
+    }
+    if (wasPlaying) {
+      videoEl.play().catch(() => {});
+    }
+  };
+  if (videoEl.readyState >= 1) {
+    onMeta();
+  } else {
+    videoEl.addEventListener('loadedmetadata', onMeta, { once: true });
+  }
+}
+
 function initModals() {
   const showreelModal = document.getElementById('showreelModal');
   const closeBtns = document.querySelectorAll('[data-close-modal]');
@@ -1342,24 +1364,18 @@ function initModals() {
         e.stopPropagation();
         const reelVideo = document.getElementById('showreelModalVideo');
         if (!reelVideo) return;
-        const curTime = reelVideo.currentTime;
         showreel1080Btn.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
         showreel4kBtn.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
-        reelVideo.src = 'video/sajan-batman-1080p.mp4';
-        reelVideo.currentTime = curTime;
-        reelVideo.play().catch(() => {});
+        switchVideoQuality(reelVideo, 'video/sajan-batman-1080p.mp4');
       });
 
       showreel4kBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const reelVideo = document.getElementById('showreelModalVideo');
         if (!reelVideo) return;
-        const curTime = reelVideo.currentTime;
         showreel4kBtn.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
         showreel1080Btn.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
-        reelVideo.src = 'video/sajan-batman-4k-h264.mp4';
-        reelVideo.currentTime = curTime;
-        reelVideo.play().catch(() => {});
+        switchVideoQuality(reelVideo, 'video/sajan-batman-4k-h264.mp4');
       });
     }
   }
@@ -1470,22 +1486,16 @@ function openCaseStudyModal(projectId) {
 
         modalBtn1080.onclick = (e) => {
           e.stopPropagation();
-          const t = videoEl.currentTime;
           modalBtn1080.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
           modalBtn4K.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
-          videoEl.src = project.videoUrl;
-          videoEl.currentTime = t;
-          videoEl.play().catch(() => {});
+          switchVideoQuality(videoEl, project.videoUrl);
         };
 
         modalBtn4K.onclick = (e) => {
           e.stopPropagation();
-          const t = videoEl.currentTime;
           modalBtn4K.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
           modalBtn1080.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
-          videoEl.src = project.video4kUrl;
-          videoEl.currentTime = t;
-          videoEl.play().catch(() => {});
+          switchVideoQuality(videoEl, project.video4kUrl);
         };
       } else {
         qualitySelector.classList.add('hidden');
