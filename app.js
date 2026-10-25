@@ -7,33 +7,33 @@
 // --- 1. LOCALIZED INDIAN PORTFOLIO DATA ---
 const caseStudiesData = [
   {
-    id: 'kavya-couture',
-    title: 'Kavya Couture — Royal Bridal Heritage',
+    id: 'sajan-batman-visualiser',
+    title: 'Sajan Sajan × Batman — 4K Director Cut Visualizer',
     category: 'commercials',
-    categoryLabel: 'Brand Film & Meta Ads',
-    categoryLabelShort: 'Bridal Film',
-    client: 'Kavya Luxury Pret (Mumbai & Delhi)',
-    clientLocation: 'Mumbai Bridal',
-    duration: '2:15 Master Film + 32 Vertical Cuts',
-    shortDuration: '2:15 Master',
+    categoryLabel: 'Cinematic Visualizer & VFX',
+    categoryLabelShort: '4K Visualizer',
+    client: 'Hashmi Edits × Warner Music Collab',
+    clientLocation: 'Mumbai Studio',
+    duration: '4K 60FPS Visualizer Cut',
+    shortDuration: '4K 60FPS',
     accentType: 'gold',
     year: '2026',
-    heroMetric: { value: '₹14.8 Cr', label: 'GMV' },
-    subMetric: '18.2M Views',
-    posterUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-    summary: 'A cinematic festive bridal commercial shot in Rajasthan havelis, paired with a full-funnel Instagram & Meta ads blitz driving pan-India boutique sales.',
+    heroMetric: { value: '4K HDR', label: '60 FPS Master' },
+    subMetric: '28.4M Views',
+    posterUrl: 'video/batman_poster.jpg',
+    videoUrl: 'video/sajan-batman-4k.mp4',
+    summary: 'A dark, brooding cinematic visualizer fusing iconic Indian synth melodies with neo-noir Gotham aesthetic. Color-graded in DaVinci Resolve Studio with anamorphic 2.39:1 framing and uncompressed spatial audio.',
     metrics: [
-      { label: 'Return on Ad Spend', value: '5.2x ROAS' },
-      { label: 'Reels Video Views', value: '24.6M+' },
-      { label: 'Revenue Generated', value: '+₹4.2 Cr' },
-      { label: 'Customer Acq. Cost', value: '-35% CAC' }
+      { label: 'Master Fidelity', value: '4K 60FPS Ultra HD' },
+      { label: 'Color Grading', value: 'DaVinci Wide Gamut' },
+      { label: 'Aspect Ratio', value: '2.39:1 Anamorphic' },
+      { label: 'Global Video Reach', value: '28.4M+ Impressions' }
     ],
-    challenge: 'Kavya needed to stand out from generic bridal lookbooks and establish high prestige for their flagship festive couture collection, while driving aggressive e-commerce & boutique appointments.',
-    creativeStrategy: 'Shot on ARRI Alexa Mini LF with vintage anamorphic glass in heritage palaces. We captured the intricate zari embroidery, jewelry textures, and royal elegance, then cut 32 high-converting vertical variations for Instagram Reels.',
-    growthStrategy: 'Engineered a multi-tier Meta Ads funnel targeting luxury bridal shoppers across Mumbai, Delhi NCR, Hyderabad, and Bengaluru, retargeted with designer behind-the-scenes stories.',
-    quote: '"MSD delivered on two fronts where typical agencies fail: authentic royal cinema that actually generated ₹4.2 Crore in direct festive revenue."',
-    quoteAuthor: 'Kavya Singhania — Founder & Creative Director, Kavya Couture'
+    challenge: 'Reinventing classic cultural nostalgia into high-concept modern cinema with intense pacing, flawless dark-room shadows, and seamless audio-visual sync.',
+    creativeStrategy: 'Rendered at native 4K with deep obsidian blacks, gold rim highlights, cinematic film grain emulation, and spatial surround audio balancing.',
+    growthStrategy: 'Targeted launch across high-resolution creator platforms, audio reels repurposing, and cinema-grade preview loops for brand partnerships.',
+    quote: '"MSD treats visual rhythm like architecture. The sheer fidelity, frame timing, and dark-room texture created an instant cult phenomenon."',
+    quoteAuthor: 'Hashmi Edits — Director & Lead VFX Artist'
   },
   {
     id: 'udaivilas-wedding',
@@ -50,7 +50,7 @@ const caseStudiesData = [
     heroMetric: { value: '4.8M', label: 'Reach' },
     subMetric: '920+ Leads',
     posterUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
     summary: 'A 35mm-inspired heirloom royal wedding film captured across the majestic courtyards and lakeside ghats of The Oberoi Udaivilas in Udaipur.',
     metrics: [
       { label: 'WedMeGood Feature', value: 'Top Wedding of Year' },
@@ -79,7 +79,7 @@ const caseStudiesData = [
     heroMetric: { value: '1.2M', label: 'Downloads' },
     subMetric: '₹42 CPA',
     posterUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4',
+    videoUrl: 'https://vjs.zencdn.net/v/oceans.mp4',
     summary: 'A sleek 3D product showcase commercial combined with programmatic B2B SEO that ranked RupeeFlow on Page #1 for 38 high-intent fintech search terms across India.',
     metrics: [
       { label: 'Top 3 Google Ranks', value: '38 Keywords' },
@@ -108,7 +108,7 @@ const caseStudiesData = [
     heroMetric: { value: '14.2K', label: 'Pre-Orders' },
     subMetric: '18.5M Views',
     posterUrl: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+    videoUrl: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
     summary: 'A high-octane commercial film featuring pursuit-arm camera tracking across the Western Ghats, driving 14,000+ pre-orders in 30 days.',
     metrics: [
       { label: 'Pre-Orders Generated', value: '14,200+ Units' },
@@ -137,7 +137,7 @@ const caseStudiesData = [
     heroMetric: { value: '820K', label: 'Reel Reach' },
     subMetric: '5.0 / 5.0 Rating',
     posterUrl: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+    videoUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
     summary: 'A sun-drenched South Goa beach wedding film capturing a joyful 3-day coastal celebration with live acoustic guitars and golden-hour portraits.',
     metrics: [
       { label: 'Client Satisfaction', value: '5.0 / 5.0' },
@@ -166,7 +166,7 @@ const caseStudiesData = [
     heroMetric: { value: '42.8M', label: 'Organic Views' },
     subMetric: '+₹2.8 Cr Sales',
     posterUrl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+    videoUrl: 'https://vjs.zencdn.net/v/oceans.mp4',
     summary: 'A viral content engine producing 60 monthly high-aesthetic Instagram Reels, scaling the brand from zero to 310,000 active community members in 90 days.',
     metrics: [
       { label: 'Follower Growth', value: '0 → 310K' },
@@ -195,7 +195,7 @@ const caseStudiesData = [
     heroMetric: { value: '₹18 Cr', label: 'Pipeline' },
     subMetric: 'AD India Feature',
     posterUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4',
+    videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
     summary: 'A poetic film capturing tropical brutalist residential villas in Alibaug that positioned Vaya for ₹18 Cr in private HNI acquisitions.',
     metrics: [
       { label: 'Media Feature', value: 'AD India' },
@@ -224,7 +224,7 @@ const caseStudiesData = [
     heroMetric: { value: '#1 Rank', label: '16 Cities' },
     subMetric: '+4,120 Leads',
     posterUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackSeeTheWorld.mp4',
+    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
     summary: 'Tripled membership registrations across 18 fitness locations in Mumbai, Delhi, and Bengaluru through Google Map Pack SEO dominance and member transformation reels.',
     metrics: [
       { label: 'Local Traffic', value: '+480% MoM' },
@@ -253,7 +253,7 @@ const caseStudiesData = [
     heroMetric: { value: '₹6.8 Cr', label: 'Drop Sales' },
     subMetric: '34M Views',
     posterUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    videoUrl: 'video/sajan-batman-4k.mp4',
     summary: 'Engineered viral drop anticipation reels and creator seeding that sold out entire limited collections in 9 minutes across India.',
     metrics: [
       { label: 'Sellout Velocity', value: '9 Minutes' },
@@ -353,6 +353,10 @@ class EnhancedSoundEngine {
     }
   }
 
+  toggle() {
+    return this.toggleAmbient();
+  }
+
   toggleAmbient() {
     this.unlockMobileAudio();
     if (this.isPlayingAmbient) {
@@ -367,7 +371,7 @@ class EnhancedSoundEngine {
   playAmbient() {
     this.init();
     if (this.isPlayingAmbient) return;
-    if (this.ctx.state === 'suspended') this.ctx.resume();
+    if (this.ctx.state === 'suspended') this.ctx.resume().catch(() => {});
 
     this.ambientGainNode = this.ctx.createGain();
     this.ambientGainNode.gain.setValueAtTime(0.001, this.ctx.currentTime);
@@ -541,7 +545,7 @@ class EnhancedSoundEngine {
 const soundEngine = new EnhancedSoundEngine();
 
 function initMobileAudioUnlock() {
-  const unlockEvents = ['touchstart', 'touchend', 'pointerdown'];
+  const unlockEvents = ['touchstart', 'touchend', 'pointerdown', 'click'];
   const handleUnlock = () => {
     soundEngine.unlockMobileAudio();
     unlockEvents.forEach(evt => window.removeEventListener(evt, handleUnlock, { passive: true }));
@@ -769,7 +773,7 @@ function createBigBoxHtml(project, spanClasses) {
 
         <!-- Mobile Quick Audio Toggle -->
         <button type="button" class="mobile-audio-toggle" aria-label="Toggle sound" title="Toggle audio">
-          <span class="audio-toggle-icon">🔇</span>
+          <span class="audio-toggle-icon"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></span>
         </button>
 
         <!-- Mobile Live Playback / Equalizer Status Badge -->
@@ -886,7 +890,7 @@ function createSlimSmallBoxHtml(project, spanClasses) {
 
         <!-- Mobile Quick Audio Toggle -->
         <button type="button" class="mobile-audio-toggle" aria-label="Toggle sound" title="Toggle audio">
-          <span class="audio-toggle-icon">🔇</span>
+          <span class="audio-toggle-icon"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></span>
         </button>
 
         <!-- Mobile Live Playback / Equalizer Status Badge -->
@@ -1011,10 +1015,10 @@ function bindCardInteractions(card, project) {
 
       const icon = audioToggle.querySelector('.audio-toggle-icon');
       if (video.muted) {
-        icon.textContent = '🔇';
+        icon.innerHTML = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
         audioToggle.classList.remove('is-unmuted');
       } else {
-        icon.textContent = '🔊';
+        icon.innerHTML = '<svg class="w-3.5 h-3.5 text-[#d8c39e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
         audioToggle.classList.add('is-unmuted');
         HapticFeedback.trigger('tick');
       }
@@ -1310,7 +1314,7 @@ function initModals() {
       const reelVideo = document.getElementById('showreelModalVideo') || showreelModal.querySelector('video');
       if (reelVideo) {
         if (!reelVideo.src) {
-          reelVideo.src = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4';
+          reelVideo.src = 'video/sajan-batman-4k.mp4';
         }
         reelVideo.play().catch(() => {});
       }
