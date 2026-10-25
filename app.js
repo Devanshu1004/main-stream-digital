@@ -21,7 +21,7 @@ const caseStudiesData = [
     heroMetric: { value: '4K HDR', label: '60 FPS Master' },
     subMetric: '28.4M Views',
     posterUrl: 'video/batman_poster.jpg',
-    videoUrl: 'video/sajan-batman-4k.mp4',
+    videoUrl: 'video/sajan-batman-1080p.mp4',
     summary: 'A dark, brooding cinematic visualizer fusing iconic Indian synth melodies with neo-noir Gotham aesthetic. Color-graded in DaVinci Resolve Studio with anamorphic 2.39:1 framing and uncompressed spatial audio.',
     metrics: [
       { label: 'Master Fidelity', value: '4K 60FPS Ultra HD' },
@@ -253,7 +253,7 @@ const caseStudiesData = [
     heroMetric: { value: '₹6.8 Cr', label: 'Drop Sales' },
     subMetric: '34M Views',
     posterUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80',
-    videoUrl: 'video/sajan-batman-4k.mp4',
+    videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
     summary: 'Engineered viral drop anticipation reels and creator seeding that sold out entire limited collections in 9 minutes across India.',
     metrics: [
       { label: 'Sellout Velocity', value: '9 Minutes' },
@@ -593,7 +593,6 @@ if (document.readyState === 'loading') {
 
 // --- 4. CUSTOM MAGNETIC CURSOR (DESKTOP) ---
 function initCustomCursor() {
-  // Mobile QA Fix: Abort on touch screens to eliminate 120Hz CPU/battery drain
   if (window.matchMedia('(pointer: coarse)').matches || !('onmousemove' in window)) {
     return;
   }
@@ -606,34 +605,25 @@ function initCustomCursor() {
   let mouseY = window.innerHeight / 2;
   let followerX = mouseX;
   let followerY = mouseY;
+  let isHovered = false;
 
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    cursor.style.left = `${mouseX}px`;
-    cursor.style.top = `${mouseY}px`;
-  });
+  }, { passive: true });
 
-  function renderFollower() {
-    followerX += (mouseX - followerX) * 0.18;
-    followerY += (mouseY - followerY) * 0.18;
-    follower.style.left = `${followerX}px`;
-    follower.style.top = `${followerY}px`;
-    requestAnimationFrame(renderFollower);
+  function renderCursor() {
+    cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%) scale(${isHovered ? 1.6 : 1})`;
+    followerX += (mouseX - followerX) * 0.2;
+    followerY += (mouseY - followerY) * 0.2;
+    follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%) scale(${isHovered ? 1.25 : 1})`;
+    requestAnimationFrame(renderCursor);
   }
-  requestAnimationFrame(renderFollower);
+  requestAnimationFrame(renderCursor);
 
-  document.querySelectorAll('a, button, .interactive-item').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1.6)';
-      follower.style.transform = 'translate(-50%, -50%) scale(1.25)';
-      follower.style.borderColor = 'rgba(255, 255, 255, 0.7)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-      follower.style.transform = 'translate(-50%, -50%) scale(1)';
-      follower.style.borderColor = 'rgba(255, 255, 255, 0.25)';
-    });
+  document.querySelectorAll('a, button, .interactive-item, .portfolio-card').forEach(el => {
+    el.addEventListener('mouseenter', () => { isHovered = true; });
+    el.addEventListener('mouseleave', () => { isHovered = false; });
   });
 }
 
@@ -1132,27 +1122,38 @@ function initPortfolioVideoSystem() {
   if (!cards.length) return;
 
   if (isTouchDevice) {
-    // --- MOBILE INTERSECTION OBSERVER SETUP ---
-    portfolioObserver = new IntersectionObserver(() => {
-      evaluateActiveCentralCard();
+    // High-performance single-threshold observer
+    if (portfolioObserver) {
+      portfolioObserver.disconnect();
+    }
+
+    portfolioObserver = new IntersectionObserver((entries) => {
+      // Settle scroll before playing to prevent stutter
+      clearTimeout(scrollSettleTimer);
+      scrollSettleTimer = setTimeout(() => {
+        requestAnimationFrame(evaluateActiveCentralCard);
+      }, 140);
     }, {
       root: null,
-      rootMargin: '-18% 0px -18% 0px', // Central sweet spot
-      threshold: [0, 0.25, 0.5, 0.75, 1.0]
+      rootMargin: '-15% 0px -15% 0px',
+      threshold: [0.4]
     });
 
     cards.forEach(card => portfolioObserver.observe(card));
 
-    // Scroll Settle Listener (Prevents video churn during fast fling scrolling)
+    // While actively scrolling, pause immediately to ensure 60+ FPS touch scroll
     window.addEventListener('scroll', () => {
+      if (activeMobileCard) {
+        deactivateMobileVideo(activeMobileCard);
+        activeMobileCard = null;
+      }
       clearTimeout(scrollSettleTimer);
       scrollSettleTimer = setTimeout(() => {
-        evaluateActiveCentralCard();
-      }, 100);
+        requestAnimationFrame(evaluateActiveCentralCard);
+      }, 180);
     }, { passive: true });
 
-    // Initial check
-    setTimeout(evaluateActiveCentralCard, 200);
+    setTimeout(evaluateActiveCentralCard, 300);
 
   } else {
     // --- DESKTOP HOVER INTERACTION SETUP ---
