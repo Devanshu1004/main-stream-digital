@@ -22,6 +22,7 @@ const caseStudiesData = [
     subMetric: '28.4M Views',
     posterUrl: 'video/batman_poster.jpg',
     videoUrl: 'video/sajan-batman-1080p.mp4',
+    video4kUrl: 'video/sajan-batman-4k-h264.mp4',
     summary: 'A dark, brooding cinematic visualizer fusing iconic Indian synth melodies with neo-noir Gotham aesthetic. Color-graded in DaVinci Resolve Studio with anamorphic 2.39:1 framing and uncompressed spatial audio.',
     metrics: [
       { label: 'Master Fidelity', value: '4K 60FPS Ultra HD' },
@@ -1311,22 +1312,56 @@ function initModals() {
     }
   });
 
-  // Showreel Modal Trigger
+  // Showreel Modal Trigger with Instant 1080p Default & 4K Toggle
   const showreelTrigger = document.getElementById('openShowreelBtn');
+  const showreel1080Btn = document.getElementById('showreelBtn1080');
+  const showreel4kBtn = document.getElementById('showreelBtn4K');
+
   if (showreelTrigger && showreelModal) {
     showreelTrigger.addEventListener('click', () => {
+      const ambient = document.getElementById('heroAmbientVideo');
+      if (ambient) ambient.pause();
       showreelModal.classList.add('active');
       document.body.classList.add('modal-open');
       document.body.style.overflow = 'hidden';
       const reelVideo = document.getElementById('showreelModalVideo') || showreelModal.querySelector('video');
       if (reelVideo) {
-        if (!reelVideo.src) {
-          reelVideo.src = 'video/sajan-batman-4k.mp4';
-        }
+        reelVideo.src = 'video/sajan-batman-1080p.mp4';
+        reelVideo.currentTime = 0;
         reelVideo.play().catch(() => {});
+      }
+      if (showreel1080Btn && showreel4kBtn) {
+        showreel1080Btn.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
+        showreel4kBtn.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
       }
       soundEngine.playModalOpen();
     });
+
+    if (showreel1080Btn && showreel4kBtn) {
+      showreel1080Btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const reelVideo = document.getElementById('showreelModalVideo');
+        if (!reelVideo) return;
+        const curTime = reelVideo.currentTime;
+        showreel1080Btn.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
+        showreel4kBtn.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
+        reelVideo.src = 'video/sajan-batman-1080p.mp4';
+        reelVideo.currentTime = curTime;
+        reelVideo.play().catch(() => {});
+      });
+
+      showreel4kBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const reelVideo = document.getElementById('showreelModalVideo');
+        if (!reelVideo) return;
+        const curTime = reelVideo.currentTime;
+        showreel4kBtn.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
+        showreel1080Btn.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
+        reelVideo.src = 'video/sajan-batman-4k-h264.mp4';
+        reelVideo.currentTime = curTime;
+        reelVideo.play().catch(() => {});
+      });
+    }
   }
 
   // Mobile Bottom Sheet Drag-down dismiss support
@@ -1369,6 +1404,11 @@ function closeAllModals() {
     soundEngine.playModalClose();
   }
 
+  const ambient = document.getElementById('heroAmbientVideo');
+  if (ambient && ambient.paused) {
+    ambient.play().catch(() => {});
+  }
+
   modals.forEach(modal => {
     modal.classList.remove('active');
     const v = modal.querySelector('video');
@@ -1376,10 +1416,8 @@ function closeAllModals() {
       v.pause();
       v.currentTime = 0;
       // Free hardware decoders on mobile Safari / Chrome
-      if (modal.id === 'showreelModal') {
-        v.removeAttribute('src');
-        v.load();
-      }
+      v.removeAttribute('src');
+      v.load();
     }
   });
 
@@ -1390,6 +1428,9 @@ function closeAllModals() {
 function openCaseStudyModal(projectId) {
   const project = caseStudiesData.find(p => p.id === projectId);
   if (!project) return;
+
+  const ambient = document.getElementById('heroAmbientVideo');
+  if (ambient) ambient.pause();
 
   const modal = document.getElementById('caseStudyModal');
   if (!modal) return;
@@ -1414,8 +1455,42 @@ function openCaseStudyModal(projectId) {
   if (videoEl) {
     videoEl.src = project.videoUrl;
     videoEl.poster = project.posterUrl;
-    videoEl.load();
     videoEl.play().catch(() => {});
+
+    // Quality Selector Handling
+    const qualitySelector = document.getElementById('modalQualitySelector');
+    const modalBtn1080 = document.getElementById('modalBtn1080');
+    const modalBtn4K = document.getElementById('modalBtn4K');
+
+    if (qualitySelector && modalBtn1080 && modalBtn4K) {
+      if (project.video4kUrl) {
+        qualitySelector.classList.remove('hidden');
+        modalBtn1080.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
+        modalBtn4K.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
+
+        modalBtn1080.onclick = (e) => {
+          e.stopPropagation();
+          const t = videoEl.currentTime;
+          modalBtn1080.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
+          modalBtn4K.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
+          videoEl.src = project.videoUrl;
+          videoEl.currentTime = t;
+          videoEl.play().catch(() => {});
+        };
+
+        modalBtn4K.onclick = (e) => {
+          e.stopPropagation();
+          const t = videoEl.currentTime;
+          modalBtn4K.className = 'px-2 py-0.5 rounded bg-white text-black font-semibold cursor-pointer transition-all';
+          modalBtn1080.className = 'px-2 py-0.5 rounded text-zinc-400 hover:text-white cursor-pointer transition-all';
+          videoEl.src = project.video4kUrl;
+          videoEl.currentTime = t;
+          videoEl.play().catch(() => {});
+        };
+      } else {
+        qualitySelector.classList.add('hidden');
+      }
+    }
   }
 
   if (challengeEl) challengeEl.textContent = project.challenge;
